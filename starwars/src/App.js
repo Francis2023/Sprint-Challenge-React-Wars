@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import './App.css';
-import styled from 'styled-components'
+// import styled from 'styled-components'
+import Card from "./components/Card";
+
+// const card = styled.div`
+//   width: 100px;
+//   Color: black;
+//   display: flex;
+//   justify-content: space-between;
+//   flex-direction: column;
+//   flex-wrap: wrap;
+//   width: 200px;
+//   height: 500px;
 
 
-const card = styled.div`
-  width: 100px;
-  Color: black;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 200px;
-  height: 500px;
-
-
-`;
+// `;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -48,19 +48,12 @@ const [character, setCharacter] = useState([]);
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      <div className="CharacterCard">
-        {character.map(character => (
-           <card key={character.name}>{character.name}</card> 
-        ))}
-        </div>
+      <Card character={character} /> 
+      
     </div>
   );
 }
 
-{/* <div className="CharacterCard">
-        {character.map(character => (
-           <div className="card" key={character.name}>{character.name}</div> 
-        ))}
-        </div> */}
+
 
 export default App;
